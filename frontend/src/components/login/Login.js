@@ -6,10 +6,19 @@ function Login() {
     pass: '',
   };
   const [form, setForm] = useState(initialState);
+  const [formErr, setFormErr] = useState(true);
   console.log(form);
 
   const handleChange = (name, value) => {
     setForm({ ...form, [name]: value });
+    setFormErr(true);
+  };
+
+  const validation = () => {
+    if (!form.email && !form.pass) {
+      alert('please fill all the informations below');
+      setFormErr(false);
+    }
   };
   return (
     <div className="login-form">
@@ -31,6 +40,13 @@ function Login() {
             value={form.pass}
             onChange={(e) => handleChange(e.target.name, e.target.value)}
           />
+          {!formErr && <p>Please fill all the informations!</p>}
+        </div>
+
+        <div className="input">
+          <button type="button" onClick={validation}>
+            Login
+          </button>
         </div>
       </div>
     </div>
