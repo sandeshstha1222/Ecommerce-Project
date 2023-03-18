@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './login.css';
 function Login() {
   const initialState = {
     email: '',
@@ -8,11 +8,11 @@ function Login() {
   const [form, setForm] = useState(initialState);
   console.log(form);
 
-  const handleChange = (fname, value) => {
-    setForm({ ...form, [fname]: value });
+  const handleChange = (name, value) => {
+    setForm({ ...form, [name]: value });
   };
   return (
-    <div>
+    <div className="login-form">
       <div className="login">
         <div className="input">
           <input
