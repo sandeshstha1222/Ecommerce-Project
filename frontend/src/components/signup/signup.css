@@ -33,3 +33,29 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
+/* ***********Mobile Device*********** */
+@media screen and (max-width: 600px) {
+  .Signup-Inputs input {
+    width: 20em;
+  }
+  .Signup button {
+    width: 20em;
+  }
+}
+@media screen and (max-width: 350px) {
+  .Signup-Inputs input {
+    width: 15em;
+  }
+  .Signup button {
+    width: 15em;
+  }
+}
+@media screen and (max-width: 270px) {
+  .Signup-Inputs input {
+    width: 10em;
+  }
+  .Signup button {
+    width: 10em;
+  }
+}
