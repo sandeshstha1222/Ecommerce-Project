@@ -16,6 +16,7 @@ const Signup = () => {
   };
   return (
     <div className="Signup">
+      <div className="Logo">LOGO</div>
       <div className="Signup-Inputs">
         <input
           name="firstname"
@@ -54,9 +55,15 @@ const Signup = () => {
       </div>
       <div>
         <p style={{ display: "flex", height: "max-content" }}>
-          Already have an account?{" "}
-          <span style={{ textDecoration: "underline" }}>
-            {/* <Link>Login</Link> */}
+          Already have an account?
+          <span
+            style={{
+              textDecoration: "underline",
+              color: "#0165ff",
+              cursor: "pointer",
+            }}
+          >
+            Login
           </span>
         </p>
       </div>
