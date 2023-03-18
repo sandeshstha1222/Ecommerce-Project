@@ -16,8 +16,11 @@ function Login() {
 
   const validation = () => {
     if (!form.email && !form.pass) {
-      alert('please fill all the informations below');
       setFormErr(false);
+    } else if (!form.email) {
+      setFormErr('emailErr');
+    } else if (!form.pass) {
+      setFormErr('passErr');
     }
   };
   return (
@@ -31,6 +34,11 @@ function Login() {
             value={form.email}
             onChange={(e) => handleChange(e.target.name, e.target.value)}
           />
+          {formErr == 'emailErr' ? (
+            <p style={{ color: 'red' }}>Please enter your email...</p>
+          ) : (
+            <></>
+          )}
         </div>
         <div className="input">
           <input
@@ -40,7 +48,14 @@ function Login() {
             value={form.pass}
             onChange={(e) => handleChange(e.target.name, e.target.value)}
           />
-          {!formErr && <p>Please fill all the informations!</p>}
+          {formErr == 'passErr' ? (
+            <p style={{ color: 'red' }}>Please enter your password...</p>
+          ) : (
+            <></>
+          )}
+          {!formErr && (
+            <p style={{ color: 'red' }}>Please fill all the informations!</p>
+          )}
         </div>
 
         <div className="input">
