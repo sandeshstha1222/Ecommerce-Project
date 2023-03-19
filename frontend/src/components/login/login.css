@@ -39,4 +39,17 @@
   padding: 6px;
   border-radius: 5px;
   border: 1px solid rgb(70, 69, 69);
+  cursor: pointer;
 }
+
+@media screen and (max-width: 1000px) {
+  .login-form .login {
+    width: 80%;
+  }
+  .login-form .input {
+    width: 80%;
+  }
+  .login-form .input button {
+    width: 80%;
+  }
+} ;
