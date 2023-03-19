@@ -35,7 +35,7 @@ function Login() {
             onChange={(e) => handleChange(e.target.name, e.target.value)}
           />
           {formErr == 'emailErr' ? (
-            <p style={{ color: 'red' }}>Please enter your email...</p>
+            <span style={{ color: 'red' }}>Please enter your email...</span>
           ) : (
             <></>
           )}
@@ -49,12 +49,14 @@ function Login() {
             onChange={(e) => handleChange(e.target.name, e.target.value)}
           />
           {formErr == 'passErr' ? (
-            <p style={{ color: 'red' }}>Please enter your password...</p>
+            <span style={{ color: 'red' }}>Please enter your password...</span>
           ) : (
             <></>
           )}
           {!formErr && (
-            <p style={{ color: 'red' }}>Please fill all the informations!</p>
+            <span style={{ color: 'red' }}>
+              Please fill all the informations!
+            </span>
           )}
         </div>
 
