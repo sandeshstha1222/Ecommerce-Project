@@ -1,70 +1,73 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import axios from "axios";
 import "./signup.css";
+import logo from "../../assests/logo3.png";
 const Signup = () => {
   const [values, setValues] = useState({
-    firstname: "",
-    lastname: "",
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
-    cpassword: "",
+    cPassword: "",
   });
 
   const handleInputs = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
   };
+  const handleSubmit = () => {
+    axios.post("/");
+  };
   return (
     <div className="Signup">
-      <div className="Logo">LOGO</div>
+      <div className="Logo">
+        <img src={logo} className="Logo" alt="UNBOXING STUDIO" />
+      </div>
       <div className="Signup-Inputs">
         <input
-          name="firstname"
+          name="firstName"
+          type="text"
           placeholder="First Name"
-          value={values.firstname}
+          value={values.firstName}
           onChange={handleInputs}
         />
         <input
-          name="lastname"
+          name="lastName"
+          type="text"
           placeholder="Last Name"
-          value={values.lastname}
+          value={values.lastName}
           onChange={handleInputs}
         />
 
         <input
           name="email"
+          type="email"
           placeholder="Email"
           value={values.email}
           onChange={handleInputs}
         />
         <input
           name="password"
+          type="password"
           placeholder="Password"
           value={values.password}
           onChange={handleInputs}
         />
         <input
-          name="cpassword"
+          name="cPassword"
+          type="password"
           placeholder="Confirm Password"
-          value={values.cpassword}
+          value={values.cPassword}
           onChange={handleInputs}
         />
       </div>
-      <div className="Submit">
+      <div className="Submit" onClick={handleSubmit}>
         <button>SUBMIT</button>
       </div>
       <div>
         <p style={{ display: "flex", height: "max-content" }}>
           Already have an account?
-          <span
-            style={{
-              textDecoration: "underline",
-              color: "#0165ff",
-              cursor: "pointer",
-            }}
-          >
-            Login
-          </span>
+          <span>Login</span>
         </p>
       </div>
     </div>
