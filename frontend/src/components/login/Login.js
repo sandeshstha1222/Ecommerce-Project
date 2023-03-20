@@ -34,7 +34,7 @@ function Login() {
             value={form.email}
             onChange={(e) => handleChange(e.target.name, e.target.value)}
           />
-          {formErr == 'emailErr' ? (
+          {formErr === 'emailErr' ? (
             <span style={{ color: 'red' }}>Please enter your email...</span>
           ) : (
             <></>
@@ -48,7 +48,7 @@ function Login() {
             value={form.pass}
             onChange={(e) => handleChange(e.target.name, e.target.value)}
           />
-          {formErr == 'passErr' ? (
+          {formErr === 'passErr' ? (
             <span style={{ color: 'red' }}>Please enter your password...</span>
           ) : (
             <></>
