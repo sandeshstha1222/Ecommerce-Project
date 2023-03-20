@@ -8,10 +8,12 @@ function Nav() {
         <img src="" alt="logo" />
       </div>
       <div className="menu">
-        <span>Home</span>
-        <span>Brand</span>
-        <span>About</span>
-        <span>Contact</span>
+        <div className="menuList">
+          <span>Home</span>
+          <span>Brand</span>
+          <span>About</span>
+          <span>Contact</span>
+        </div>
       </div>
     </div>
   );
