@@ -2,6 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./signup.css";
 import logo from "../../assests/logo3.png";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { BsPersonFill } from "react-icons/bs";
+import { MdEmail } from "react-icons/md";
+import { FaLock } from "react-icons/fa";
+import EmailIcon from "@mui/icons-material/Email";
+
 const Signup = () => {
   const [values, setValues] = useState({
     firstName: "",
@@ -16,7 +23,37 @@ const Signup = () => {
     setValues({ ...values, [name]: value });
   };
   const handleSubmit = () => {
-    axios.post("/");
+    if (
+      (values.firstName &&
+        values.lastName &&
+        values.email &&
+        values.password &&
+        values.cPassword) === ""
+    ) {
+      toast.error("Field is Empty");
+    }
+    if (
+      values.firstName &&
+      values.lastName &&
+      values.email &&
+      values.password &&
+      values.cPassword
+    ) {
+      axios
+        .post("/user/", {
+          firstName: values.firstName,
+          lastName: values.lastName,
+          email: values.email,
+          password: values.password,
+          cPassword: values.cPassword,
+        })
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   };
   return (
     <div className="Signup">
@@ -24,6 +61,8 @@ const Signup = () => {
         <img src={logo} className="Logo" alt="UNBOXING STUDIO" />
       </div>
       <div className="Signup-Inputs">
+        <BsPersonFill />
+        <span class="material-icons-round">email</span>
         <input
           name="firstName"
           type="text"
@@ -38,7 +77,6 @@ const Signup = () => {
           value={values.lastName}
           onChange={handleInputs}
         />
-
         <input
           name="email"
           type="email"
