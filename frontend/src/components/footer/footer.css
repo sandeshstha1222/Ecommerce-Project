@@ -1,0 +1,73 @@
+.Footer {
+  bottom: 0;
+  position: relative;
+  width: 100%;
+  background: linear-gradient(to right, #00093c, #2d0b00);
+  height: auto;
+  font-family: "poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: aliceblue;
+  padding: 3em 0;
+}
+.Footer .Contains {
+  display: flex;
+  justify-content: space-around;
+}
+/* *******Map******** */
+.Footer .Map p {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+/* *******Logo******* */
+.Footer .Logo {
+  display: flex;
+  align-items: center;
+}
+.Footer .Logo .Logo {
+  width: 8em;
+}
+.Footer .Copyright {
+  line-height: 0.4em;
+}
+
+/* *******Service********* */
+.Footer .Services {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.Footer .Services .List {
+  line-height: 0.5em;
+  font-size: 15px;
+}
+/* *******Contact-Follow******** */
+.Footer .Contact-Follow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.Footer .Contact {
+  line-height: 0.5em;
+}
+.Footer .Contact span {
+  text-decoration: underline;
+}
+
+.Footer .Social-Media-Icons {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+}
+.Footer .Social-Media-Icons .icons {
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: 4px;
+  font-size: 18px;
+}
+hr {
+  color: white;
+}

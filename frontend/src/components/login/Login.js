@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import './login.css';
+import axios from "axios";
+import React, { useState } from "react";
+import "./login.css";
 function Login() {
   const initialState = {
-    email: '',
-    pass: '',
+    email: "",
+    pass: "",
   };
   const [form, setForm] = useState(initialState);
   const [formErr, setFormErr] = useState(true);
@@ -18,9 +19,9 @@ function Login() {
     if (!form.email && !form.pass) {
       setFormErr(false);
     } else if (!form.email) {
-      setFormErr('emailErr');
+      setFormErr("emailErr");
     } else if (!form.pass) {
-      setFormErr('passErr');
+      setFormErr("passErr");
     }
   };
   return (
@@ -34,8 +35,8 @@ function Login() {
             value={form.email}
             onChange={(e) => handleChange(e.target.name, e.target.value)}
           />
-          {formErr === 'emailErr' ? (
-            <span style={{ color: 'red' }}>Please enter your email...</span>
+          {formErr === "emailErr" ? (
+            <span style={{ color: "red" }}>Please enter your email...</span>
           ) : (
             <></>
           )}
@@ -48,13 +49,13 @@ function Login() {
             value={form.pass}
             onChange={(e) => handleChange(e.target.name, e.target.value)}
           />
-          {formErr === 'passErr' ? (
-            <span style={{ color: 'red' }}>Please enter your password...</span>
+          {formErr === "passErr" ? (
+            <span style={{ color: "red" }}>Please enter your password...</span>
           ) : (
             <></>
           )}
           {!formErr && (
-            <span style={{ color: 'red' }}>
+            <span style={{ color: "red" }}>
               Please fill all the informations!
             </span>
           )}

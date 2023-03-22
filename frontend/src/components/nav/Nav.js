@@ -1,5 +1,6 @@
-import React from 'react';
-import './nav.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./nav.css";
 
 function Nav() {
   return (
@@ -13,6 +14,12 @@ function Nav() {
           <span>Brand</span>
           <span>About</span>
           <span>Contact</span>
+          <Link to="/signup">
+            <button>SIGNUP</button>
+          </Link>
+          <Link to="/login">
+            <button>LOGIN</button>
+          </Link>
         </div>
       </div>
     </div>
