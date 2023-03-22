@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './login.css';
+import axios from 'axios';
 function Login() {
   const initialState = {
     email: '',
@@ -7,13 +8,15 @@ function Login() {
   };
   const [form, setForm] = useState(initialState);
   const [formErr, setFormErr] = useState(true);
-  console.log(form);
 
   const handleChange = (name, value) => {
     setForm({ ...form, [name]: value });
     setFormErr(true);
   };
-
+  const sendLogin = {
+    email: form.email,
+    password: form.pass,
+  };
   const validation = () => {
     if (!form.email && !form.pass) {
       setFormErr(false);
@@ -21,6 +24,12 @@ function Login() {
       setFormErr('emailErr');
     } else if (!form.pass) {
       setFormErr('passErr');
+    }
+    if (form.email && form.pass) {
+      axios.post('/user/login', sendLogin).then((response) => {
+        console.log('hey');
+        console.log(response);
+      });
     }
   };
   return (
