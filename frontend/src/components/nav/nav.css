@@ -3,7 +3,8 @@
   height: 80px;
   float: left;
   background-color: aliceblue;
-  box-shadow: 0 4px 2px -2px gray;
+  box-shadow: 0 4px 7px -2px gray;
+  border-radius: 0px 0px 10px 10px;
 }
 .nav .logo {
   width: 20%;
@@ -33,4 +34,5 @@
 .nav .menu span {
   margin-right: 40px;
   font-size: 20px;
+  cursor: pointer;
 }
